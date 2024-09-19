@@ -1,0 +1,240 @@
+/* Basic styling */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #e2e2e2;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style untuk Navbar */
+.navbar {
+  background-color: #2c3e50; /* Soft, modern dark blue-grey */
+  padding: 10px;
+  position: fixed; /* Navbar tetap saat di-scroll */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  margin-left: -10px;
+}
+
+/* Container untuk menyusun menu dan toggle */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* Posisi menu berada di tengah */
+  align-items: center;
+  position: relative;
+}
+
+/* Style untuk daftar menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+/* Style untuk item menu */
+.nav-menu li {
+  margin: 0 15px;
+}
+
+/* Style untuk link */
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  border-radius: 25px; /* Rounded links */
+}
+
+/* Style untuk link yang aktif */
+.nav-menu li a.active {
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #1a252f; /* Slightly darker blue-grey */
+  box-shadow: 0 4px 12px rgba(26, 37, 47, 0.4); /* Add box shadow on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Hover effect */
+.nav-menu li a:hover {
+  background-color: #1a252f; /* Slightly darker blue-grey */
+  box-shadow: 0 4px 12px rgba(26, 37, 47, 0.4); /* Add box shadow on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Style untuk toggle button (disembunyikan di layar besar) */
+.nav-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Container untuk hasil pendaftaran */
+.results-container {
+  max-width: 1260px;
+  margin: 100px auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Judul tabel */
+.results-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px; /* Ukuran font judul ditingkatkan untuk kejelasan */
+}
+
+/* Kontainer tabel dengan scroll horizontal */
+.table-container {
+  overflow-x: auto; /* Menambahkan scroll horizontal */
+  -webkit-overflow-scrolling: touch; /* Untuk tampilan yang lebih baik pada perangkat iOS */
+}
+
+/* Center-align specific cells */
+.center-align {
+  text-align: center;
+}
+
+/* Tabel styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: slideIn 1s ease-in-out;
+}
+
+/* Styling header tabel */
+thead {
+  background-color: #1a1833;
+  color: #fff;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #6170a77a;
+  cursor: pointer;
+}
+
+/* Styling link dalam tabel */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Button styling dalam tabel */
+.btn-status {
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Button Setujui */
+.btn-status.blue {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-status.blue:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Button Batalkan */
+.btn-status.red {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-status.red:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Responsif: Toggle muncul di layar kecil */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Sembunyikan menu pada tampilan mobile */
+    flex-direction: column;
+    width: 100%;
+    height: 215px;
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    background-color: #333;
+  }
+
+  .nav-menu.active {
+    display: flex; /* Tampilkan menu saat toggle aktif */
+  }
+
+  .nav-menu li {
+    text-align: center;
+    margin: 15px;
+    margin-left: -46px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}

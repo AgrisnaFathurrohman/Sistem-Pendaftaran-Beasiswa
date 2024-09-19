@@ -1,0 +1,244 @@
+body{
+  font-family: 'Arial', sans-serif;
+  background-color: #e2e2e2;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style untuk Navbar */
+.navbar {
+  background-color: #2c3e50; /* Soft, modern dark blue-grey */
+  padding: 10px;
+  position: fixed; /* Navbar tetap saat di-scroll */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  margin-left: -17px;
+}
+
+/* Container untuk menyusun menu dan toggle */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* Posisi menu berada di tengah */
+  align-items: center;
+  position: relative;
+}
+
+/* Style untuk daftar menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+/* Style untuk item menu */
+.nav-menu li {
+  margin: 0 15px;
+}
+
+/* Style untuk link */
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  border-radius: 25px; /* Rounded links */
+}
+
+/* Style untuk link yang aktif */
+.nav-menu li a.active {
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #1a252f; /* Slightly darker blue-grey */
+  box-shadow: 0 4px 12px rgba(26, 37, 47, 0.4); /* Add box shadow on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Hover effect */
+.nav-menu li a:hover {
+  background-color: #1a252f; /* Slightly darker blue-grey */
+  box-shadow: 0 4px 12px rgba(26, 37, 47, 0.4); /* Add box shadow on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Style untuk toggle button (disembunyikan di layar besar) */
+.nav-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Style untuk konten utama */
+.main-content {
+  max-width: 600px;
+  margin: 180px auto; /* Posisi tengah dengan jarak dari atas */
+  padding: 20px;
+  background-color: #f9f9f9; /* Warna latar belakang lembut */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+  text-align: center; /* Konten di tengah */
+  animation: fadeIn 0.8s ease-in-out; /* Animasi masuk */
+}
+
+/* Animasi untuk munculnya konten */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Judul halaman */
+.main-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Style untuk form */
+.form-beasiswa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Label untuk dropdown */
+.form-beasiswa label {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Dropdown untuk IPK */
+.form-beasiswa select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+/* Efek hover untuk dropdown */
+.form-beasiswa select:hover {
+  border-color: #777;
+}
+
+/* Notifikasi (tersembunyi secara default) */
+.notification {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: red;
+  transition: opacity 0.3s ease;
+}
+
+/* Style untuk radio group */
+.radio-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Jarak antar radio */
+  margin-bottom: 20px;
+}
+
+/* Custom radio button */
+.radio-group label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Style untuk span yang menggantikan radio button */
+.custom-radio {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+/* Jika radio dipilih */
+input[type="radio"]:checked + .custom-radio {
+  background-color: #333;
+}
+
+/* Tombol submit */
+.submit-btn {
+  padding: 10px 30px;
+  font-size: 16px;
+  color: white;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover untuk tombol */
+.submit-btn:hover {
+  background-color: #555;
+  transform: translateY(-2px); /* Efek naik sedikit saat hover */
+}
+
+/* Style untuk hidden class */
+.hidden {
+  display: none;
+}
+
+/* Responsif: Toggle muncul di layar kecil */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Sembunyikan menu pada tampilan mobile */
+    flex-direction: column;
+    width: 100%;
+    height: 215px;
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    background-color: #333;
+  }
+
+  .nav-menu.active {
+      display: flex; /* Tampilkan menu saat toggle aktif */
+  }
+
+  .nav-menu li {
+      text-align: center;
+      margin: 15px;
+      margin-left: -46px;
+  }
+
+  .nav-toggle {
+      display: block;
+  }
+}
+
+/* Responsif: Konten tengah pada layar kecil */
+@media (max-width: 600px) {
+  .main-content {
+      margin: 50px 20px;
+      padding: 15px;
+      margin-top: 90px;
+  }
+
+  .radio-group {
+      flex-direction: column; /* Ubah radio menjadi vertikal di layar kecil */
+  }
+}
